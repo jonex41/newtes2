@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTrip"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="Finding Drivers"
+        android:textSize="@dimen/_18sdp" />
+
+    <carbon.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/layoutTrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/white"
+        app:carbon_cornerRadius="12dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/CF8F8F8"
+            android:id="@+id/txtTripName"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:gravity="center"
+            android:text="Single Trip"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_12" />
+
+        <carbon.widget.ImageView
+            app:layout_constraintTop_toBottomOf="@+id/txtTripName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/img_service_ride"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerInside"
+            app:carbon_src="@drawable/ic_premium_car" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@+id/txtTripName"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtRideCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="Premium"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@+id/txtRideCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="C$ 0.0"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_12" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_service_ride"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/CF5F5F5"
+            android:gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintTop_toTopOf="@+id/txtSource"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSource"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/imgStartPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_gravity="center"
+            android:src="@drawable/start"
+            android:tint="@color/CDDDDDD" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            app:layout_constraintStart_toStartOf="@+id/imgStartPoint"
+            app:layout_constraintEnd_toEndOf="@+id/imgStartPoint"
+            app:layout_constraintTop_toBottomOf="@+id/imgStartPoint"
+            app:layout_constraintBottom_toTopOf="@+id/imgStopPoint"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/CE9E9E9"
+            android:gravity="center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtDestination"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDestination"
+            android:id="@+id/imgStopPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="13dp"
+            android:src="@drawable/start"
+            android:tint="#111111" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@+id/img_service_ride"
+            app:layout_constraintStart_toEndOf="@+id/imgStartPoint"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtSource"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:text="Potohar Metro Station"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@+id/txtSource"
+            app:layout_constraintStart_toEndOf="@+id/imgStartPoint"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginStart="13dp"
+            android:fontFamily="@font/gilroy_semibold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Potohar Metro Station"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_16" />
+
+        <carbon.widget.ConstraintLayout
+            app:carbon_cornerRadius="6dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtDestination"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/layoutTravelTime"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/CF8F8F8">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/lblMiles"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/travelTimeInMinutes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="@string/travel_time_approx"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lblTimeTravelApprox"
+                app:layout_constraintEnd_toStartOf="@+id/lblMiles"
+                android:id="@+id/travelTimeInMinutes3"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingStart="3dp"
+                android:text="0 Minutes"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtMiles"
+                android:id="@+id/lblMiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_medium"
+                android:includeFontPadding="false"
+                android:gravity="start"
+                android:paddingStart="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text="Km"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/txtMiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingStart="3dp"
+                android:text="0.0"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14" />
+
+        </carbon.widget.ConstraintLayout>
+
+    </carbon.widget.ConstraintLayout>
+
+    <carbon.widget.ConstraintLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/layoutRaiseFare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/white"
+        app:carbon_cornerRadius="12dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/lblCurrentFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/current_fare"
+            android:textColor="@color/C898989"
+            android:textSize="@dimen/text_14" />
+
+        <carbon.widget.TextView
+            app:layout_constraintTop_toBottomOf="@+id/lblCurrentFare"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/txtRaiseFareDown"
+            app:carbon_cornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:minWidth="70dp"
+            android:minHeight="36dp"
+            android:gravity="center"
+            android:background="@color/CF8F8F8"
+            android:text="-1 C$"
+            android:textSize="@dimen/text_12"
+            android:textColor="@color/C898989"
+            />
+
+        <carbon.widget.TextView
+            app:layout_constraintTop_toBottomOf="@+id/lblCurrentFare"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtRaiseFareUp"
+            app:carbon_cornerRadius="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:minWidth="70dp"
+            android:minHeight="36dp"
+            android:gravity="center"
+            android:background="@android:color/black"
+            android:text="+1 C$"
+            android:textSize="@dimen/text_12"
+            android:textColor="@color/white"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@+id/lblCurrentFare"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/txtRaisedFare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="C$ 0.0"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_16" />
+
+        <carbon.widget.Button
+            app:layout_constraintTop_toBottomOf="@+id/txtRaiseFareDown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:carbon_cornerRadius="12dp"
+            android:id="@+id/btn_raise_fare"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:minWidth="70dp"
+            android:minHeight="36dp"
+            android:gravity="center"
+            android:background="@android:color/black"
+            android:textAllCaps="false"
+            android:text="@string/raise_fare"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/white"
+            />
+
+    </carbon.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/C40FFFFFF"
+        android:id="@+id/rvDriverRequest"
+        android:visibility="gone"
+        tools:listitem="@layout/item_driver_request"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:reverseLayout="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

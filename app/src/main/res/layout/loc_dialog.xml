@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:gravity="center_horizontal"
+    tools:context=".ui.activity.splash.SplashActivity">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/ic_baseline_location_on_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/allow_loc"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="10dp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#80CAC4C4"
+        android:layout_marginTop="10dp"/>
+
+
+    <TextView
+        android:id="@+id/allow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/try_hard"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#80CAC4C4"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/deny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deny"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black" />
+
+</LinearLayout>
+
+

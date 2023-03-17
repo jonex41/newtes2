@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/img_pager_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginStart="26dp"
+        android:adjustViewBounds="false"
+        android:clickable="false"
+        android:scaleType="fitEnd"
+        android:background="@drawable/ic_sign_in_up_bg"
+        android:src="@drawable/ic_car_van"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/img_pager_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:lineHeight="28dp"
+        android:gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="@string/book_a_ride"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:lineHeight="28dp"
+        android:gravity="center_horizontal"
+        android:text="@string/six_taxi"
+        android:textColor="@color/yellow"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/button_round_accent"
+            android:foreground="?android:selectableItemBackground"
+            android:fontFamily="@font/gilroy_bold"
+            android:lineHeight="17dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="@string/sign_in" />
+
+        <Button
+            android:id="@+id/sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_round_accent"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:foreground="?android:selectableItemBackground"
+            android:fontFamily="@font/gilroy_bold"
+            android:lineHeight="17dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:text="@string/sign_up" />
+
+        <TextView
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="Social Login"
+            android:id="@+id/social_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

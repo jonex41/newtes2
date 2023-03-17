@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.sixtech.rider",
+  "variantName": "processReleaseResources",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 32,
+      "versionName": "1.2.1",
+      "outputFile": "com.sixtech.rider_V32_VN-1.2.1_2022-01-23.apk"
+    }
+  ]
+}

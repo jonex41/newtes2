@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:textAllCaps="false"
+        android:text="@string/skip"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/img_pager_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginStart="26dp"
+        android:adjustViewBounds="false"
+        android:clickable="false"
+        android:src="@drawable/ic_book_comfortable"
+        android:contentDescription="@string/app_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/img_pager_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:lineHeight="28dp"
+        android:gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:text="@string/walk_1"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/gilroy_medium"
+        android:lineHeight="28dp"
+        android:maxLines="3"
+        android:text="@string/walk_1_description"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/imgLeftArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:padding="15dp"
+        android:contentDescription="@string/app_name"
+        android:background="@drawable/boarding_circle"
+        android:src="@drawable/ic_arrow_left" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgRightArrow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:padding="15dp"
+        android:background="@drawable/boarding_circle"
+        android:src="@drawable/ic_arrow_right" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

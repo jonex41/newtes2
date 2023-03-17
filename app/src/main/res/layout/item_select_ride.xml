@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="7dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/CardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="13dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="11dp">
+
+        <carbon.widget.LinearLayout
+            app:carbon_cornerRadius="@dimen/_10sdp"
+            android:id="@+id/layoutSelectRide"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/service_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/gilroy_bold"
+                android:ellipsize="end"
+                android:singleLine="true"
+                tools:text="Mini Van"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_20" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/capacity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:ellipsize="end"
+                android:singleLine="true"
+                tools:text="6 persons can ride"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_12" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/CF5F5F5" />
+
+            <carbon.widget.ImageView
+                android:id="@+id/img_service_ride"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:background="@android:color/black"
+                android:padding="8dp"
+                app:carbon_src="@drawable/ic_premium_car"
+                app:carbon_cornerRadiusBottomEnd="@dimen/_10sdp"
+                app:carbon_cornerRadiusBottomStart="@dimen/_10sdp" />
+
+        </carbon.widget.LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/txtSelectedService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_semibold"
+        android:gravity="center"
+        app:layout_anchor="@id/CardView"
+        app:layout_anchorGravity="center_horizontal"
+        android:paddingBottom="6.5dp"
+        android:background="@drawable/ic_selected_ride_bg"
+        android:translationZ="14dp"
+        android:text="@string/selected"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

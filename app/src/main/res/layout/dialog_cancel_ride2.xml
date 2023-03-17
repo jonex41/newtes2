@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:max="http://schemas.applovin.com/android/1.0"
+    android:id="@+id/bg_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:weightSum="5"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:paddingLeft="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/ic_baseline_block_24"
+            android:tint="@color/crimson"
+            android:padding="20dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancle_ride"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/quantum_black_100"/>
+
+    <TextView
+        android:id="@+id/text_cancel_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancle_ride_captain"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/quantum_black_100"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:weightSum="2">
+
+
+        <TextView
+            android:id="@+id/btn_no_keep_ride"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:background="@drawable/keep_ride_bg"
+            android:text="No, keep ride"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/quantum_black_100"
+            android:layout_marginBottom="10dp"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/btn_yes_cancel"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/cancel_ride_bg"
+            android:text="Yes, cancle ride"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/quantum_black_100"
+            android:layout_marginBottom="10dp"
+            android:onClick="onClick"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

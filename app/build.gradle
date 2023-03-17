@@ -1,0 +1,209 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.30.0'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'six_android_user'
+            keyPassword 'six_android_user'
+            storeFile file('jks/six_android_user.jks')
+            storePassword 'six_android_user'
+        }
+    }
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.sixtech.taxiapp"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 24
+        versionName "1.3.3"
+        resConfigs "fr", "ar"
+        multiDexEnabled true
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        applicationIdSuffix '.rider'
+
+        resValue "string", "app_name", "6ix Taxi"
+        // resValue "string", "google_map_key", "AIzaSyBDk13M3Mu9dAapi3IjgPcsbc6ZhD1yt84"
+//        resValue "string", "FACEBOOK_APP_ID", "2142270669370391"
+        resValue "string", "FACEBOOK_APP_ID", "503449377809300"
+//        resValue "string", "ACCOUNT_KIT_CLIENT_TOKEN", "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"
+//        resValue "string", "ACCOUNT_KIT_CLIENT_TOKEN", "ad0cef686ec1d8306f84d23e6d23bfb8"
+        resValue "string", "ACCOUNT_KIT_CLIENT_TOKEN", "ad0cef686ec1d8306f84d23e6d23bfb8"
+        resValue "string", "default_notification_channel_id", "fcm_default_channel"
+//        resValue "string", "google_signin_server_client_id", "319368476349-0enva9agc1anrqilmfqmddc4qm25so6k.apps.googleusercontent.com"
+//        resValue "string", "google_signin_server_client_id", "142597612569-rc50r66kuroritqj3i41c1e0sfimeqqs.apps.googleusercontent.com"
+//        resValue "string", "google_signin_server_client_id", "142597612569-2r0et1omql0jf62dknqt39c8aa6g7ubd.apps.googleusercontent.com"
+//        resValue "string", "google_signin_server_client_id", "319368476349-b6v1beg51nf9csb7s7p8dok1c867c1k4.apps.googleusercontent.com"
+        resValue "string", "google_signin_server_client_id", "319368476349-ded4fprmgs8co0i54viacddcc2is6o78.apps.googleusercontent.com"
+
+        //      Staging credentials
+        buildConfigField "String", "BASE_URL", '"https://6ixtaxi.com/"'
+        buildConfigField "String", "BASE_IMAGE_URL", '"https://6ixtaxi.com/storage/"'
+        buildConfigField "String", "TERMS_CONDITIONS", '"https://6ixtaxi.com/privacy"'
+//        buildConfigField "String", "BASE_URL", '"http://207.148.20.45/dev/public/"'
+//        buildConfigField "String", "BASE_IMAGE_URL", '"http://207.148.20.45/dev/public/storage/"'
+//        buildConfigField "String", "TERMS_CONDITIONS", '"http://207.148.20.45/dev/public/privacy"'
+//        buildConfigField "String", "CLIENT_SECRET", '"hTTiSoEuCQVSPrLIqnZzkxmK2uiFyFZnBLKioeUV"'
+//        buildConfigField "String", "CLIENT_SECRET", '"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"'
+        buildConfigField "String", "CLIENT_SECRET", '"vNL65HPbu7oMeZq4H0Ps26gOQdr3UTfcFUjkNPGB"'
+//        buildConfigField "String", "CLIENT_SECRET", '"f256fbdf92136337dc4d5f38a4b8259bc0e1a080"'
+//        buildConfigField "String", "CLIENT_SECRET", '"ad0cef686ec1d8306f84d23e6d23bfb8"'
+
+        buildConfigField "String", "CLIENT_ID", '"2"'
+
+        buildConfigField "String", "DEVICE_TYPE", '"android"'
+        buildConfigField "String", "PAYPAL_CLIENT_TOKEN", '"eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJlMWMzMGE4YmJlZmZlODk4MDJlMmY2ZGM5MzE4NjE1ZmJmZDQ4YWFjMTc3Y2ZkN2YxZjE4MDc1YjMzMzFkYmQ2fGNyZWF0ZWRfYXQ9MjAxOC0wOC0wN1QwNjo0MDoxMS4zNjI0Nzg4MzIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPTM0OHBrOWNnZjNiZ3l3MmJcdTAwMjZwdWJsaWNfa2V5PTJuMjQ3ZHY4OWJxOXZtcHIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvMzQ4cGs5Y2dmM2JneXcyYi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzLzM0OHBrOWNnZjNiZ3l3MmIvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vb3JpZ2luLWFuYWx5dGljcy1zYW5kLnNhbmRib3guYnJhaW50cmVlLWFwaS5jb20vMzQ4cGs5Y2dmM2JneXcyYiJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJBY21lIFdpZGdldHMsIEx0ZC4gKFNhbmRib3gpIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJicmFpbnRyZWVDbGllbnRJZCI6Im1hc3RlcmNsaWVudDMiLCJiaWxsaW5nQWdyZWVtZW50c0VuYWJsZWQiOnRydWUsIm1lcmNoYW50QWNjb3VudElkIjoiYWNtZXdpZGdldHNsdGRzYW5kYm94IiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sIm1lcmNoYW50SWQiOiIzNDhwazljZ2YzYmd5dzJiIiwidmVubW8iOiJvZmYifQ=="'
+
+        buildConfigField "String", "PROVIDER_PACKAGE_NAME", '"com.sixtech.rider"'
+
+//        buildConfigField "String", "FCM_SERRVER_KEY", '"AAAAXnnl6xI:APA91bFRRknuERYLJrj2cDhUfmxLzOoyDYoNz_vkZfa20m9tv_WfwlwcRsY6RnvqkKwrKLEhigF9G3h2gwOn04jQL7xqz1OPWye13jMYjaBP-EDp_DHhH9WtUtNkakUujLXcNM38aggD"'
+//        buildConfigField "String", "FCM_SERRVER_KEY", '"AAAASlvYNr0:APA91bHUD-fO6tkDt86nRU98Lf4JHASo0O6ZUCVdBZVHFOHyzdbBp7HZnEJmPijZfsLUw-RCrcAw7fzMSpsGhAJ-zoW_GMr_gkDjZvUA30l3_ZX7394bHwYSd8Uq7OvMAjgoFLAZBmGD"'
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.applicationId}_V${variant.versionCode}_VN-${variant.versionName}_" + new Date().format('yyyy-MM-dd') + ".apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //      Fire Base
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+//    implementation 'com.firebaseui:firebase-ui-storage:3.2.1'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+//    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+
+    //      Facebook
+    implementation 'com.facebook.android:facebook-login:12.3.0'
+    implementation 'com.facebook.android:account-kit-sdk:4.37.0'
+
+    //      Google Services
+//    implementation 'com.google.maps:google-maps-services:0.2.7'
+    implementation 'com.google.maps.android:android-maps-utils:2.2.3'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    implementation 'com.google.android.libraries.places:places:2.7.0'
+
+
+    //      Rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //      Networking (Retrofit)
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation("com.github.bumptech.glide:okhttp3-integration:4.11.0") {
+        exclude group: 'glide-parent'
+    }
+    //      DI (Butter knife)
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    //      Image processing (Glide, Lottie, circular image & Image picker)
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.airbnb.android:lottie:3.5.0'
+    implementation 'com.github.jkwiecien:EasyImage:2.0.4'
+
+    //      Others
+    implementation 'com.akexorcist:googledirectionlibrary:1.1.1'
+    implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    /*      dimen       */
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    //      Car Animation in Rate card
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    /*implementation('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
+        transitive = true
+    }*/
+
+
+    implementation 'com.google.firebase:firebase-crashlytics:18.3.2'
+
+    /* implementation platform('com.google.firebase:firebase-bom:26.2.0')
+     implementation 'com.google.firebase:firebase-crashlytics'
+     implementation 'com.google.firebase:firebase-analytics'*/
+
+    // comment below line & its relative code in files, if you face issue while generate signed apk.
+    debugImplementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    //      payment gateway...
+//    implementation 'com.braintreepayments:card-form:3.5.0'
+//    implementation 'com.braintreepayments.api:braintree:2.18.1'
+    implementation 'com.stripe:stripe-android:20.0.0'
+
+    /*      pin view        */
+    implementation 'com.chaos.view:pinview:1.4.3'
+
+    /*      toasty      */
+    implementation 'com.github.GrenderG:Toasty:1.3.0'
+    implementation 'id.zelory:compressor:2.1.0'
+
+    // Page Indicator using Recycler view
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.9'
+
+    //Local Storage Security
+    implementation "androidx.security:security-crypto:1.1.0-alpha04"
+
+    //for page indicator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
+    //cover
+    implementation 'com.github.crosswall:Android-Coverflow:release-v1.0.5'
+
+    /*ToDo for widgets*/
+    api 'tk.zielony:carbon:0.17.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

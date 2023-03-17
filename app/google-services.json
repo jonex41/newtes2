@@ -1,0 +1,255 @@
+{
+  "project_info": {
+    "project_number": "319368476349",
+    "firebase_url": "https://ixtaxi.firebaseio.com",
+    "project_id": "ixtaxi",
+    "storage_bucket": "ixtaxi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319368476349:android:f75cfd4bd10ece769269d4",
+        "android_client_info": {
+          "package_name": "com.sixtech.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319368476349-cmhlcsts777go4ek5acr1ddfp2ueil4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.driver",
+            "certificate_hash": "f256fbdf92136337dc4d5f38a4b8259bc0e1a080"
+          }
+        },
+        {
+          "client_id": "319368476349-e1gshlikaft427slj1ihr0j9ovmdqpce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.driver",
+            "certificate_hash": "f790386eada6f43c8210cc2218ec017ab31c6dc1"
+          }
+        },
+        {
+          "client_id": "319368476349-oli4rousb9gqhis44tcbpkd1q2n9fj31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.driver",
+            "certificate_hash": "679b0dde529219a1364abe68e87339060d891e7a"
+          }
+        },
+        {
+          "client_id": "319368476349-ucme60sho40ffppbmi3r3um09pleq7t7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.driver",
+            "certificate_hash": "561e3e8a085afd763dfcdb0b4176267de6cd2896"
+          }
+        },
+        {
+          "client_id": "319368476349-uqiajcsnh6o0j6n2hp849i9n84s2b86h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.driver",
+            "certificate_hash": "1ffa831063f4ae00de012e7765e7fabda8a3d8cf"
+          }
+        },
+        {
+          "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyn0l-4-daP476zj5wlVCvn7oi3fFgT7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319368476349-id5o5mllc9bkgpjntl71ohkgkbqmrb5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.6ixtaxi.driver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319368476349:android:c444a1e5589381779269d4",
+        "android_client_info": {
+          "package_name": "com.sixtech.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319368476349-5ksoep4frbaosbnjvo7jpo167iff3sph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.rider",
+            "certificate_hash": "f256fbdf92136337dc4d5f38a4b8259bc0e1a080"
+          }
+        },
+        {
+          "client_id": "319368476349-8b6pm7hnsoadqb6s22gkg76aeap6gt5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.rider",
+            "certificate_hash": "679b0dde529219a1364abe68e87339060d891e7a"
+          }
+        },
+        {
+          "client_id": "319368476349-k5uopmeor43olm09hhlnhcmsppm0ueff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.rider",
+            "certificate_hash": "9de5d943da7091c19826fb2dcf05452c6a2c57c5"
+          }
+        },
+        {
+          "client_id": "319368476349-tdt9i77nn3rp3dn6fm68dsjj36s2u63g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.rider",
+            "certificate_hash": "561e3e8a085afd763dfcdb0b4176267de6cd2896"
+          }
+        },
+        {
+          "client_id": "319368476349-vjkbnq3uh7104pmav342l2444hama90d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.rider",
+            "certificate_hash": "59a6971433d0ec8935720b82c2ed48f5c569d37d"
+          }
+        },
+        {
+          "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyn0l-4-daP476zj5wlVCvn7oi3fFgT7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319368476349-id5o5mllc9bkgpjntl71ohkgkbqmrb5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.6ixtaxi.driver"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319368476349:android:18f1475a9909ee1b9269d4",
+        "android_client_info": {
+          "package_name": "com.sixtech.taxiapp.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319368476349-7goj9cbnov0tpbi9oc7drvfvon2o5f7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "9de5d943da7091c19826fb2dcf05452c6a2c57c5"
+          }
+        },
+        {
+          "client_id": "319368476349-8jvecdobibs8cmvrfooh6pn13qbfn408.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "679b0dde529219a1364abe68e87339060d891e7a"
+          }
+        },
+        {
+          "client_id": "319368476349-9tie82obnu6701m277q28eakoh4glanh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "3213cdc7a82602d3d7f8ea94a8420bbed4d70bd5"
+          }
+        },
+        {
+          "client_id": "319368476349-ccfv1tire29jf14nt6rn3igb81c8ota4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "59a6971433d0ec8935720b82c2ed48f5c569d37d"
+          }
+        },
+        {
+          "client_id": "319368476349-e0insvlfdgak4op4nmed1j8a1kc9pks8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "561e3e8a085afd763dfcdb0b4176267de6cd2896"
+          }
+        },
+        {
+          "client_id": "319368476349-kmc89u4sfb5mtkfjuk1l8fbmbnc40h0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "f256fbdf92136337dc4d5f38a4b8259bc0e1a080"
+          }
+        },
+        {
+          "client_id": "319368476349-tggd5aut433l1c3e3leujmh5vg03qdn1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sixtech.taxiapp.rider",
+            "certificate_hash": "8b2c6ddc01fc0bff87fa125f088c308bb92fe1c7"
+          }
+        },
+        {
+          "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyn0l-4-daP476zj5wlVCvn7oi3fFgT7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319368476349-b3hqlv2s4peeio3fd7mtjihlrr1o08ad.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319368476349-id5o5mllc9bkgpjntl71ohkgkbqmrb5e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.6ixtaxi.driver"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

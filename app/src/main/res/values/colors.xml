@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#DDDDDD</color>
+<!--    <color name="colorAccent">#ffcb08</color>-->
+        <color name="colorPrimaryText">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+
+<!--    <color name="colorPrimary">#FFF</color>-->
+<!--    <color name="colorPrimaryDark">#e1e1e1</color>-->
+<!--    &lt;!&ndash;    <color name="colorAccent">#ffcb08</color>&ndash;&gt;-->
+<!--    <color name="colorPrimaryText">#2A2A2A</color>-->
+<!--    <color name="colorAccent">#2A2A2A</color>-->
+<!--    <color name="colorPrimaryText">#ffffff</color>-->
+    <color name="colorSecondaryText">#888888</color>
+    <color name="window_background">#F7F7F8</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#2B65EC</color>
+    <color name="yellow">#fdc928</color>
+    <color name="grey">#EBEBF1</color>
+    <color name="crimson">#DC143C</color>
+    <color name="green">#32DC14</color>
+    <color name="darkgreen">#31A31D</color>
+    <color name="color_normal_dot">#EAEAEA</color>
+    <color name="C898989">#898989</color>
+    <color name="CF5F5F5">#F5F5F5</color>
+    <color name="CF8F8F8">#F8F8F8</color>
+    <color name="CF0F0F0">#F0F0F0</color>
+    <color name="CDDDDDD">#DDDDDD</color>
+    <color name="CE9E9E9">#E9E9E9</color>
+    <color name="C40FFFFFF">#95FFFFFF</color>
+    <color name="CFAFAFA">#FAFAFA</color>
+    <color name="C00D655">#00D655</color>
+</resources>

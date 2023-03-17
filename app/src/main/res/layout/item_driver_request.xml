@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carbon.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    app:carbon_cornerRadius="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/background_card"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:max="15"
+        android:progress="10"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="3dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_user_placeholder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintEnd_toStartOf="@+id/txtBidFare"
+        android:id="@+id/txtVehicleName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="14dp"
+        android:fontFamily="@font/gilroy_semibold"
+        android:maxLines="1"
+        android:text="Honda Civic"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_16" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/txtVehicleName"
+        app:layout_constraintStart_toStartOf="@+id/txtVehicleName"
+        android:id="@+id/txtDriverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:maxLines="1"
+        android:text="Muzammil Afridi"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/text_14" />
+
+    <carbon.widget.TextView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/txtBidFare"
+        app:carbon_cornerRadius="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:minWidth="70dp"
+        android:minHeight="36dp"
+        android:gravity="center"
+        android:background="@color/CF8F8F8"
+        android:text="+3 C$"
+        android:textSize="@dimen/text_18"
+        android:textStyle="bold"
+        android:textColor="@color/carbon_black"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toBottomOf="@+id/avatar"
+        app:layout_constraintStart_toStartOf="@id/txtVehicleName"
+        android:id="@+id/img_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:src="@drawable/ic_star" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toTopOf="@+id/img_star"
+        app:layout_constraintBottom_toBottomOf="@+id/img_star"
+        app:layout_constraintStart_toEndOf="@+id/img_star"
+        android:id="@+id/txtDriverRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="5.0"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_16" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/img_star"
+        app:layout_constraintStart_toStartOf="@+id/txtVehicleName"
+        android:id="@+id/lblDriverDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="@string/distance"
+        android:textColor="@color/C898989"
+        android:textSize="@dimen/text_14" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/txtWaitingTime"
+        app:layout_constraintEnd_toEndOf="@+id/txtWaitingTime"
+        android:id="@+id/txtDriverMiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="300 Miles"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_14" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/txtBidFare"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/lblDriverWatingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="@string/waiting_time"
+        android:textColor="@color/C898989"
+        android:textSize="@dimen/text_14" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        app:layout_constraintTop_toBottomOf="@+id/txtBidFare"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/txtWaitingTime"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="30 Min"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_14" />
+
+    <carbon.widget.Button
+        app:layout_constraintTop_toBottomOf="@+id/txtDriverMiles"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:carbon_cornerRadius="12dp"
+        android:id="@+id/btn_decline"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/_13sdp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:minWidth="70dp"
+        android:minHeight="36dp"
+        android:gravity="center"
+        android:background="@color/CFAFAFA"
+        android:textAllCaps="false"
+        android:text="@string/decline"
+        android:textSize="@dimen/text_12"
+        android:textColor="@android:color/black"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <carbon.widget.Button
+        app:layout_constraintTop_toBottomOf="@+id/txtDriverMiles"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:carbon_cornerRadius="12dp"
+        android:id="@+id/btn_accept"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="13dp"
+        android:fontFamily="@font/gilroy_bold"
+        android:minWidth="70dp"
+        android:minHeight="36dp"
+        android:gravity="center"
+        android:background="@android:color/black"
+        android:textAllCaps="false"
+        android:text="@string/accept"
+        android:textSize="@dimen/text_12"
+        android:textColor="@color/white"
+        />
+
+
+</carbon.widget.ConstraintLayout>

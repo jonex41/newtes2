@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.activity.location_pick.LocationPickActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_user_full_icon" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:title=" ">
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:elevation="1dp"
+                                android:gravity="start"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.075"
+                                    android:src="@drawable/start"
+                                    android:tint="@color/browser_actions_bg_grey" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="from"
+                                    android:textColor="#111111" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#AAA"
+                                    android:orientation="vertical">
+
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/sourceTv"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_weight="1"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:hint="@string/pickup_location"
+                                    android:inputType="textPostalAddress"
+                                    android:singleLine="true"
+                                    android:tag="source"
+                                    android:textColorHint="#AAA"
+                                    android:textSize="@dimen/text_14" />
+
+                                <ImageView
+                                    android:id="@+id/reset_source"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="@dimen/_10sdp"
+                                    android:src="@drawable/ic_close"
+                                    android:tint="#AAA" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.075"
+                                    android:src="@drawable/start"
+                                    android:tint="#111111" />
+
+                                <TextView
+                                    android:id="@+id/stop1txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stop 1"
+                                    android:textColor="#111111" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2.0">
+
+                                <LinearLayout
+                                    android:id="@+id/addstop_1_destination_layout"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_15sdp"
+                                    android:layout_weight="1.8"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <!--                            <LinearLayout-->
+                                    <!--                                android:id="@+id/stop1S"-->
+                                    <!--                                android:layout_width="1dp"-->
+                                    <!--                                android:layout_height="match_parent"-->
+                                    <!--                                android:background="#AAA"-->
+                                    <!--                                android:visibility="gone"-->
+                                    <!--                                android:orientation="vertical" />-->
+                                    <EditText
+                                        android:id="@+id/addstop_1_destination"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_5sdp"
+                                        android:layout_weight="1"
+                                        android:ellipsize="end"
+                                        android:gravity="center_vertical"
+                                        android:hint="@string/add_stop_1"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="textPostalAddress"
+                                        android:singleLine="true"
+                                        android:tag="stop1Destination"
+                                        android:textColor="@color/colorPrimaryText"
+                                        android:textColorHint="#AAA"
+                                        android:textSize="@dimen/text_14" />
+
+                                    <ImageView
+                                        android:id="@+id/addstop_1_reset_destination"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="@dimen/_10sdp"
+                                        android:src="@drawable/ic_close"
+                                        android:tint="#AAA" />
+
+                                </LinearLayout>
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.2">
+
+                                    <ImageView
+                                        android:id="@+id/addstop_1_add"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/app_name"
+                                        android:src="@drawable/addstopbtn"
+                                        android:tint="#000000"
+                                        android:visibility="visible" />
+
+                                    <ImageView
+                                        android:id="@+id/addstop_1_reset"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="@string/app_name"
+                                        android:src="@drawable/delete"
+                                        android:tint="#000000"
+                                        android:visibility="gone" />
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/addstop_2_destination_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:weightSum="2.0">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.075"
+                                    android:src="@drawable/start"
+                                    android:tint="#111111" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stop 2"
+                                    android:textColor="#111111" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_15sdp"
+                                        android:layout_weight="1.8"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+                                        <!--                                    <LinearLayout-->
+                                        <!--                                        android:layout_width="1dp"-->
+                                        <!--                                        android:id="@+id/stop2S"-->
+                                        <!--                                        android:layout_height="match_parent"-->
+                                        <!--                                        android:background="#AAA"-->
+                                        <!--                                        android:visibility="gone"-->
+                                        <!--                                        android:orientation="vertical" />-->
+
+                                        <EditText
+                                            android:id="@+id/addstop_2_destination"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:ellipsize="end"
+                                            android:gravity="center_vertical"
+                                            android:hint="@string/add_stop_2"
+                                            android:imeOptions="actionDone"
+                                            android:inputType="textPostalAddress"
+                                            android:singleLine="true"
+                                            android:tag="stop2Destination"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textColorHint="#AAA"
+                                            android:textSize="@dimen/text_14" />
+
+                                        <ImageView
+                                            android:id="@+id/addstop_2_reset_destination"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:contentDescription="@string/app_name"
+                                            android:padding="@dimen/_10sdp"
+                                            android:src="@drawable/ic_close"
+                                            android:tint="#AAA" />
+
+                                    </LinearLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.2">
+
+                                        <ImageView
+                                            android:id="@+id/addstop_2_add"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:contentDescription="@string/app_name"
+                                            android:src="@drawable/addstopbtn"
+                                            android:tint="#000000"
+                                            android:visibility="visible" />
+
+                                        <ImageView
+                                            android:id="@+id/addstop_2_reset"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:contentDescription="@string/app_name"
+                                            android:src="@drawable/delete"
+                                            android:tint="#000000"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/addstop_3_destination_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+
+
+                            android:weightSum="2.0">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:weightSum="2.0">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.075"
+                                    android:src="@drawable/start"
+                                    android:tint="#111111" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Stop 3"
+                                    android:textColor="#111111" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_15sdp"
+                                        android:layout_weight="1.8"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
+
+                                        <EditText
+                                            android:id="@+id/addstop_3_destination"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:ellipsize="end"
+                                            android:gravity="center_vertical"
+                                            android:hint="@string/add_stop_3"
+                                            android:imeOptions="actionDone"
+                                            android:inputType="textPostalAddress"
+                                            android:singleLine="true"
+                                            android:tag="stop3Destination"
+                                            android:textColor="@color/colorPrimaryText"
+                                            android:textColorHint="#AAA"
+                                            android:textSize="@dimen/text_14" />
+
+                                        <ImageView
+                                            android:id="@+id/addstop_3_reset_destination"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:contentDescription="@string/app_name"
+                                            android:padding="@dimen/_10sdp"
+                                            android:src="@drawable/ic_close"
+                                            android:tint="#AAA" />
+
+                                    </LinearLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.2">
+
+                                        <ImageView
+                                            android:id="@+id/addstop_3_add"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:contentDescription="@string/app_name"
+                                            android:src="@drawable/addstopbtn"
+                                            android:tint="#000000"
+                                            android:visibility="visible" />
+
+                                        <ImageView
+                                            android:id="@+id/addstop_3_reset"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:contentDescription="@string/app_name"
+                                            android:src="@drawable/delete"
+                                            android:tint="#000000"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/dd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/CardView">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/location_bs_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFF"
+                android:orientation="vertical"
+                app:behavior_hideable="false"
+                app:behavior_peekHeight="100dp"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/home_address_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_bottom"
+                                android:orientation="vertical"
+                                android:padding="8dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:drawableStart="@drawable/ic_home"
+                                    android:drawablePadding="8dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/clanpro_narrnews"
+                                    android:gravity="center_vertical"
+                                    android:padding="8dp"
+                                    android:singleLine="true"
+                                    android:text="@string/home"
+                                    android:textColor="@color/colorPrimaryText"
+                                    android:textSize="@dimen/text_14" />
+
+                                <TextView
+                                    android:id="@+id/home_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="0dp"
+                                    android:textColor="@color/colorSecondaryText"
+                                    android:textSize="@dimen/text_14" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/work_address_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/border_bottom"
+                                android:orientation="vertical"
+                                android:padding="8dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:drawableStart="@drawable/ic_work"
+                                    android:drawablePadding="8dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/clanpro_narrnews"
+                                    android:gravity="center_vertical"
+                                    android:padding="8dp"
+                                    android:singleLine="true"
+                                    android:text="@string/work"
+                                    android:textColor="@color/colorPrimaryText"
+                                    android:textSize="@dimen/text_14" />
+
+                                <TextView
+                                    android:id="@+id/work_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="0dp"
+                                    android:textColor="@color/colorSecondaryText"
+                                    android:textSize="@dimen/text_14" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:background="#EEE" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/locations_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

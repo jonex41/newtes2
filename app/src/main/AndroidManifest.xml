@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sixtech.rider">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- <uses-permission android:name="com.tranxitpro.user.mapfragment.permission.MAPS_RECEIVE" /> -->
+    <!-- <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" /> -->
+    <!-- <permission -->
+    <!-- android:name="com.tranxitpro.user.permission.MAPS_RECEIVE" -->
+    <!-- android:protectionLevel="signature" /> -->
+    <!-- <uses-feature -->
+    <!-- android:glEsVersion="0x00020000" -->
+    <!-- android:required="true" /> -->
+    <permission
+        android:name="com.sixtech.rider.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.tranxit.app.permission.C2D_MESSAGE" />
+
+    <uses-sdk tools:overrideLibrary="androidx.security" />
+
+    <application
+        android:name="com.sixtech.rider.MvpApplication"
+        android:allowBackup="true"
+        android:configChanges="locale"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID"/>
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_push" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+<!--        android:stopWithTask="false"-->
+       <!-- <service
+            android:name=".common.fcm.MyFireBaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>-->
+        <service
+            android:name=".common.fcm.MyFireBaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- [END firebase_service] -->
+
+        <service
+            android:name="com.sixtech.rider.common.fcm.MyJobService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.sixtech.rider.common.CheckStatusService" />
+
+        <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.splash.SplashActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sixtech.rider.ui.activity.corporate.CorporateActivity"
+            android:label="@string/corperate"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.Transparent" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.OnBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.SignInUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.register.PhoneNumActivity"
+            android:label="@string/phone_number"
+            android:parentActivityName="com.sixtech.rider.ui.activity.OnBoardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.sixtech.rider.ui.activity.register.OtpActivity"
+            android:label="@string/otp_verification"
+            android:parentActivityName="com.sixtech.rider.ui.activity.register.PhoneNumActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.register.RegisterActivity"
+            android:label="@string/register"
+            android:parentActivityName="com.sixtech.rider.ui.activity.register.PhoneNumActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.login.EmailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.login.PasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.profile.ProfileActivity"
+            android:label="@string/profile"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.change_password.ChangePasswordActivity"
+            android:label="@string/change_password"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.help.HelpActivity"
+            android:label="@string/help"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.your_trips.YourTripActivity"
+            android:label="@string/your_trips"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sixtech.rider.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.sixtech.rider.ui.activity.passbook.WalletHistoryActivity"
+            android:label="@string/passbook"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sixtech.rider.ui.activity.main.MainActivity" />
+        </activity> <!-- android:name=".ui.activity.payment.PaymentActivity" -->
+        <!-- android:label="@string/payment" -->
+        <!-- android:parentActivityName=".ui.activity.main.MainActivity" -->
+        <!-- android:screenOrientation="portrait" /> -->
+        <activity
+            android:name="com.sixtech.rider.ui.activity.FaqActivity"
+            android:label="@string/faq_support"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.TermsActivity"
+            android:label="@string/terms_and_conditions"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.PrivacyActivity"
+            android:label="@string/privacy_policy"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.past_trip_detail.PastTripDetailActivity"
+            android:label="@string/past_trip_details"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.upcoming_trip_detail.UpcomingTripDetailActivity"
+            android:label="@string/upcoming_trip_details"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.setting.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.location_pick.LocationPickActivity"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sixtech.rider.ui.activity.main.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.sixtech.rider.ui.activity.add_remove_stops.AddRemoveStopsActivity"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sixtech.rider.ui.activity.main.MainActivity" />
+        </activity>
+
+        <activity
+            android:name="com.sixtech.rider.ui.activity.edit_location.EditLocationActivity"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sixtech.rider.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.sixtech.rider.ui.activity.wallet.WalletActivity"
+            android:label="@string/wallet"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.coupon.CouponActivity"
+            android:label="@string/offer"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.social.SocialLoginActivity"
+            android:label="@string/white_space"
+            android:parentActivityName="com.sixtech.rider.ui.activity.OnBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.payment.PaymentActivity"
+            android:label="@string/payment"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.add_card.AddCardActivity"
+            android:label="@string/add_card_for_payments"
+            android:parentActivityName="com.sixtech.rider.ui.activity.payment.PaymentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.forgot_password.ForgotPasswordActivity"
+            android:label="@string/reset_password"
+            android:parentActivityName="com.sixtech.rider.ui.activity.login.PasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.ui.activity.card.CardsActivity"
+            android:label="@string/select_card"
+            android:parentActivityName="com.sixtech.rider.ui.activity.wallet.WalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.sixtech.rider.chat.ChatActivity"
+            android:label="@string/chat"
+            android:parentActivityName="com.sixtech.rider.ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--<activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>-->
+
+        <receiver
+            android:name="com.sixtech.rider.common.ConnectivityReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="3aef7a5b05836cf8166f23c95e43c52517bee917" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

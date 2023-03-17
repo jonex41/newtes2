@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.service_flow.ServiceFlowFragment">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bacck22">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/sos"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/sos"
+                android:tint="#111111" />
+        </FrameLayout>
+
+        <!--<FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bacck22">
+
+            <ImageView
+                android:id="@+id/chat"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/chat"
+                android:tint="#111111" />
+        </FrameLayout>-->
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bacck22">
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/edit_destination"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/location"
+                android:tint="#111111" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bacck22"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="17dp"
+                android:drawableStart="@drawable/ic_arrived"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                tools:text="Driver has arrived at your location"
+                android:textColor="@color/C00D655"
+                android:textSize="@dimen/text_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ededed" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_user_placeholder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                app:layout_constraintEnd_toStartOf="@+id/call"
+                android:id="@+id/first_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="14dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Honda Civic"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_16" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                app:layout_constraintTop_toBottomOf="@+id/first_name"
+                app:layout_constraintStart_toStartOf="@id/first_name"
+                android:id="@+id/img_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/ic_star" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                app:layout_constraintTop_toTopOf="@+id/img_star"
+                app:layout_constraintBottom_toBottomOf="@+id/img_star"
+                app:layout_constraintStart_toEndOf="@+id/img_star"
+                android:id="@+id/txtDriverRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="5.0"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_16" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                app:layout_constraintTop_toTopOf="@+id/first_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_chat_with_driver" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:background="@drawable/red_round"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="9dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/chat"
+                app:layout_constraintTop_toTopOf="@id/chat"
+                android:id="@+id/newMessage"
+                android:layout_height="9dp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                app:layout_constraintTop_toTopOf="@+id/first_name"
+                app:layout_constraintEnd_toStartOf="@id/chat"
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_call_driver" />
+
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#ededed" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/first_name"
+                app:layout_constraintTop_toBottomOf="@+id/avatar"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/service_type_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="servicename"
+                    android:textColor="#4CAF50"
+                    android:textSize="@dimen/text_12"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/service_model"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Honda civic"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/service_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:singleLine="true"
+                    android:text="H422S"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutRightSide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/call"
+                app:layout_constraintTop_toBottomOf="@+id/avatar"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_arrive_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Arrive In"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/provider_eta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="0 Mins"
+                    android:textSize="@dimen/text_14"
+                    android:textColor="@android:color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:visibility="gone"
+                    android:id="@+id/lblOTP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:singleLine="true"
+                    android:text="OTP"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_12" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:visibility="gone"
+                    android:id="@+id/otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:singleLine="true"
+                    android:text="9876"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_14" />
+
+            </LinearLayout>
+
+            <carbon.widget.Button
+                app:layout_constraintTop_toBottomOf="@+id/layoutRightSide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:carbon_cornerRadius="12dp"
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/gilroy_bold"
+                android:gravity="center"
+                android:background="@color/CFAFAFA"
+                android:textAllCaps="false"
+                android:text="@string/cancel_ride"
+                android:textSize="@dimen/text_14"
+                android:textColor="@android:color/black"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/due_to_peek_hours"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_12"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/coupon_transparent"
+                android:drawableLeft="@drawable/cancel"
+                android:paddingStart="@dimen/_20sdp"
+                android:text="@string/cancel"
+                android:textColor="#111111" />
+
+            <!--<Button
+                android:id="@+id/call"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/coupon_transparent"
+                android:drawableLeft="@drawable/call"
+                android:paddingStart="@dimen/_30sdp"
+                android:text="@string/call"
+                android:textColor="#111111" />-->
+
+            <Button
+                android:id="@+id/share_ride"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/coupon_transparent"
+                android:text="@string/share_ride"
+                android:textColor="@color/quantum_black_100"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

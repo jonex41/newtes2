@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/bacck22"
+        android:elevation="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/clanpro_medium"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/invoice"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_18" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ededed" />
+
+        <ImageView
+            android:id="@+id/ivInvoice"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_invoice_100" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/booking_id"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/booking_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/distance_travelled"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/llTravelTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/time_taken"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/travel_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/base_fare"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/fixed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/commission"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/tvCommission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/distance_constainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/distance_fare"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/distance_fare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/adminFee_constainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/admin_fee"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/admin_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/time_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/time_fare"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/time_fare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/tax"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/tax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tips_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/tips"
+                    android:textColor="@color/crimson"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/crimson"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/walletLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/wallet_detection"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/wallet_deduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/discountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/discount"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/clanpro_medium"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/total"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/clanpro_medium"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/clanpro_medium"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:text="@string/payable"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+                <TextView
+                    android:id="@+id/payable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/clanpro_medium"
+                    android:gravity="end"
+                    android:hint="@string/dash"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_16sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/close"
+            style="@style/MyButton.Accent"
+            android:layout_margin="8dp"
+            android:text="@string/close"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

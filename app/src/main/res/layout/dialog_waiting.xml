@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/clanpro_medium"
+            android:gravity="left"
+            android:padding="8dp"
+            android:text="@string/driver_has_to_wait"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_18" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_0min"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/dialog_waitingbtn_shape"
+                android:gravity="center"
+                android:text="@string/zero_min"
+                android:textColor="@color/quantum_black_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_5min"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dialog_waitingbtn_shape"
+                android:gravity="center"
+                android:text="@string/five_min"
+                android:textColor="@color/quantum_black_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_10min"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dialog_waitingbtn_shape"
+                android:gravity="center"
+                android:text="@string/ten_min"
+                android:textColor="@color/quantum_black_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_15min"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dialog_waitingbtn_shape"
+                android:gravity="center"
+                android:text="@string/fifteen_min"
+                android:textColor="@color/quantum_black_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_20min"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dialog_waitingbtn_shape"
+                android:gravity="center"
+                android:text="@string/twenty_min"
+                android:textColor="@color/quantum_black_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_Confirm"
+            style="@style/MyButton.Accent"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
